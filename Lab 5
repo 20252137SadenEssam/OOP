@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SalesAnalyzer {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] data = new int[7];
+        
+        System.out.print("Enter sales of 7 days: ");
+        int sum = 0, count = 0;
+
+        for (int idx = 0; idx < data.length; idx++) {
+            data[idx] = scan.nextInt();
+            sum += data[idx];
+            if (data[idx] > 20) {
+                count++;
+            }
+        }
+
+        int avg = (int) Math.round(sum / 7.0);
+
+        System.out.println("Total: " + sum);
+        System.out.println("Days greater than 20: " + count);
+        System.out.println("Average: " + avg);
+        
+        
+    }
+}
