@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class studntslists {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[][] students = new String[3][2];
+
+     
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter name for student " + (i + 1) + ": ");
+            students[i][0] = sc.nextLine();
+            System.out.print("Enter grade for student " + (i + 1) + ": ");
+            students[i][1] = sc.nextLine();
+        }
+
+      
+        System.out.println(" List ");
+        for (int i = 0; i < 3; i++) {
+            String info = students[i][0].concat(": ").concat(students[i][1]);
+            System.out.println(info);
+        }
+
+       
+        int countA = 0;
+        for (int i = 0; i < 3; i++) {
+            if (students[i][1].equalsIgnoreCase("A")) {
+                countA++;
+            }
+        }
+        System.out.println("Total students with grade A: " + countA);
+
+      
+        System.out.print("Enter a prefix to search names: ");
+        String prefix = sc.nextLine();
+        
+        int countPrefix = 0;
+        for (int i = 0; i < 3; i++) {
+            if (students[i][0].startsWith(prefix)) {
+                countPrefix++;
+            }
+        }
+        System.out.println("Names starting with  + prefix +: " + countPrefix);
+
+        sc.close();
+    }
+}
+
